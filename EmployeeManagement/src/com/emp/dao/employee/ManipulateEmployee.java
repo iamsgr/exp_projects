@@ -1,4 +1,4 @@
-package com.emp.dao;
+package com.emp.dao.employee;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,9 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.emp.model.Employee;
+import com.emp.dao.common.DbUtil;
+import com.emp.model.employee.Employee;
 
-public class ManipulateEmp {
+public class ManipulateEmployee {
 	private static Connection con = DbUtil.getConnection();
 
 	public static boolean deleteEmployee(String idArr) {
@@ -108,27 +109,6 @@ public class ManipulateEmp {
 		return true;
 	}
 
-	public static boolean getAdminCredentials(String userName, String userPass) {
-		String pass = null;
-		try {
-			PreparedStatement ps = con.prepareStatement("select adminPassword from AdminDetails where adminName=?");
-			ps.setString(1, userName);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				pass = rs.getString("adminPassword");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		if (pass == null)
-			return false;
-		if (pass.equals(userPass))
-			return true;
-		else
-			return false;
-	}
-
 	public static boolean getCredentials(String userName, String userPass) {
 		Connection con = DbUtil.getConnection();
 		String pass = null;
@@ -150,5 +130,4 @@ public class ManipulateEmp {
 		else
 			return false;
 	}
-
 }
