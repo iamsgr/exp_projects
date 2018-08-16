@@ -1,4 +1,4 @@
-package com.emp.model;
+package com.emp.model.common;
 
 public class Person {
 

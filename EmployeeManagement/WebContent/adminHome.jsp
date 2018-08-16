@@ -44,8 +44,8 @@
 		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 		//response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
 		//response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
-		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
-		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+		//response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+		//response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 			if (session.getAttribute("admin_name") == null ) {
 				System.out.println("in if of jsp");
 				response.sendRedirect("adminLogin.jsp");
@@ -55,7 +55,7 @@
 	
      %>
 	<div align="Center">
-		<table style="width: -webkit-fill-available">
+		<table style="width:-webkit-fill-available">
 			<tr>
 				<td><div>
 						<form action="adminHome" style="float:left">
@@ -68,8 +68,8 @@
 						<span style="float:right"><i style="color: green ; float:right">Welcome <%=name%>...
 						</i></span> <br> 
 						<span style="float:right">
-							<form action="adminLogout" style="align-items:center">
-								<input type="submit" value="Logout"/>
+							<form action="adminLogout" style="float:right">
+								<input type="submit" value="Logout" />
 							</form>
 						</span>
 					</div>
@@ -88,18 +88,18 @@
 			<table border="1" cellpadding="10">
 				<caption>
 					<h2>
-						<a href="/EmployeeManagement/show">List of All Employee</a>
+						<a href="/EmployeeManagement/admin/show">List of All Employee</a>
 					</h2>
 				</caption>
 				<th><input type="checkbox" id="selectall" onClick="selectAll(this);" /></th>
-				<th><a href="/EmployeeManagement/sort?by=id">ID</a></th>
-				<th><a href="/EmployeeManagement/sort?by=name">Name</a></th>
-				<th><a href="/EmployeeManagement/sort?by=gender">Gender</a></th>
-				<th><a href="/EmployeeManagement/sort?by=email">Email</a></th>
-				<th><a href="/EmployeeManagement/sort?by=mobile">Mobile</a></th>
-				<th><a href="/EmployeeManagement/sort?by=address">Address</a></th>
-				<th><a href="/EmployeeManagement/sort?by=dob">Birth Date</a></th>
-				<th><a href="/EmployeeManagement/sort?by=doj">Joining Date</a></th>
+				<th><a href="/EmployeeManagement/admin/sort?by=id">ID</a></th>
+				<th><a href="/EmployeeManagement/admin/sort?by=name">Name</a></th>
+				<th><a href="/EmployeeManagement/admin/sort?by=gender">Gender</a></th>
+				<th><a href="/EmployeeManagement/admin/sort?by=email">Email</a></th>
+				<th><a href="/EmployeeManagement/admin/sort?by=mobile">Mobile</a></th>
+				<th><a href="/EmployeeManagement/admin/sort?by=address">Address</a></th>
+				<th><a href="/EmployeeManagement/admin/sort?by=dob">Birth Date</a></th>
+				<th><a href="/EmployeeManagement/admin/sort?by=doj">Joining Date</a></th>
 				<c:forEach var="emp" items="${listEmp}">
 					<tr>
 						<td><input name="employee" type="checkbox" value="${emp.id}" /></td>

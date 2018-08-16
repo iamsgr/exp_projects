@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>update</title>
 </head>
 <body>
 	<%
@@ -25,7 +25,7 @@
 		<table style="width: -webkit-fill-available">
 			<tr>
 				<td><div>
-						<form action="adminHome" style="float:left">
+						<form action="admin/adminHome" style="float:left">
 						  <input type="submit" value="Home" style="float:left" />
 						</form>
 					</div>
@@ -35,7 +35,7 @@
 						<span style="float:right"><i style="color: green ; float:right">Welcome <%=name%>...
 						</i></span> <br> 
 						<span style="float:right">
-							<form action="adminLogout" style="align-items:center">
+							<form action="admin/adminLogout">
 								<input type="submit" value="Logout" />
 							</form>
 						</span>
@@ -44,7 +44,7 @@
 			</tr>
 		</table>
 
-		<form action="save" method="post">
+		<form action="common/save" method="post">
 			<table border="1" cellpadding="12">
 				<caption>
 					<h2>
@@ -60,40 +60,38 @@
 				</tr>
 				<tr>
 					<th>Name:</th>
-					<td><input type="text" value="${emp.name}" name="empName" /></td>
+					<td><input type="text" value="${emp.name}" name="empName" required /></td>
 				</tr>
 				<tr>
 					<th>Gender:</th>
-					<td><input type="text" value="${emp.gender}" name="empGender" /></td>
+					<td><input type="text" value="${emp.gender}" name="empGender" required /></td>
 				</tr>
 				<tr>
 					<th>Email:</th>
-					<td><input type="text" value="${emp.email}" name="empEmail" /></td>
+					<td><input type="text" value="${emp.email}" name="empEmail" required /></td>
 				</tr>
 				<tr>
 					<th>Mobile:</th>
-					<td><input type="text" value="${emp.mobNo}" name="empMob" /></td>
+					<td><input type="text" value="${emp.mobNo}" name="empMob" required /></td>
 				</tr>
 				<tr>
 					<th>Address:</th>
-					<td><input type="text" value="${emp.address}"
-						name="empAddress" /></td>
+					<td><input type="text" value="${emp.address}" name="empAddress" required /></td>
 				</tr>
 				<tr>
 					<th>Birth Date:</th>
-					<td><input type="text" value="${emp.dob}" name="empDOB" /></td>
+					<td><input type="text" value="${emp.dob}" name="empDOB" required /></td>
 				</tr>
 				<tr>
 					<th>Joining Date:</th>
-					<td><input type="text" value="${emp.joinDate}" name="empDOJ" /></td>
+					<td><input type="text" value="${emp.joinDate}" name="empDOJ" required /></td>
 				</tr>
 				<tr>
 					<th>Password:</th>
-					<td><input type="text" value="${emp.password}" name="empPass" /></td>
+					<td><input type="text" value="${emp.password}" name="empPass" required /></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="Save" /></td>
+					<td colspan="2" align="center"><input type="submit" value="Save" /></td>
 				</tr>
 			</table>
 		</form>

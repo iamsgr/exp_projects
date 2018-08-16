@@ -1,7 +1,8 @@
 package com.emp.utiities.comparator;
 
 import java.util.Comparator;
-import com.emp.model.Employee;
+
+import com.emp.model.employee.Employee;
 
 public class MobileComparator implements Comparator<Employee> {
 	

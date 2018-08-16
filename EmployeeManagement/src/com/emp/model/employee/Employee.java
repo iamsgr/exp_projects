@@ -1,4 +1,6 @@
-package com.emp.model;
+package com.emp.model.employee;
+
+import com.emp.model.common.Person;
 
 public class Employee extends Person {
 

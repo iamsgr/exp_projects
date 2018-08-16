@@ -19,15 +19,15 @@
 	<br>
 	<div align="center">
 	<samp align="center" style="color:blue"><i> Welcome to Employee Login Panel</i></samp>
-		<form action="login" method="post">
+		<form action="emp/login" method="post">
 			<table>
 				<tr>
 					<td>Email Id:</td>
-					<td><input type="text" name="user_name" placeholder="dcvijay@gmail.com"></td>
+					<td><input type="text" name="user_name" placeholder="dcvijay@gmail.com" required></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="password" placeholder="A123@vdc"></td>
+					<td><input type="password" name="password" placeholder="A123@vdc" required></td>
 				</tr>
 				<tr>
 					<td></td>

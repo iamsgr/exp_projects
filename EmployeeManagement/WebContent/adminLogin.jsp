@@ -19,15 +19,15 @@
 	<br>
 	<div align="center">
 	    <samp align="center" style="color:blue"><i> Welcome to the Admin Login Panel</i></samp>
-		<form action="adminLogin" method="post">
+		<form action="admin/adminLogin" method="post">
 			<table>
 				<tr>
 					<td>Admin Name:</td>
-					<td><input type="text" name="admin_name" placeholder="Sagar" required ></td>
+					<td><input type="text" name="admin_name" placeholder="Admin_Name" required ></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="admin_pass" placeholder="S123&sgr" required></td>
+					<td><input type="password" name="admin_pass" placeholder="Admin_Password" required></td>
 				</tr>
 				<tr>
 					<td></td>

@@ -1,4 +1,6 @@
-package com.emp.model;
+package com.emp.model.admin;
+
+import com.emp.model.common.Person;
 
 public class Admin extends Person{
     private int id;
