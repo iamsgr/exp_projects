@@ -1,3 +1,4 @@
+<%@page import="com.emp.model.employee.Employee"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -10,13 +11,14 @@
 <body>
 	<%
 	    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
-		if (session.getAttribute("user_name") == null){
+	    Object user = session.getAttribute("user"); 
+		if ( user == null & !(user instanceof Employee) ){
 			response.sendRedirect("login.jsp");
 		}
-		String name =session.getAttribute("user_name").toString();
+		Employee emp = (Employee) session.getAttribute("user");
 	%>
 	<div align="Center">
-		<i style="color: green"><%=name%> You are successfully logged
+		<i style="color: green"><%=emp.getName()%> You are successfully logged
 			in...</i><br> <br>
 		<form action="list">
 			<input type="submit" value="Show Records" />

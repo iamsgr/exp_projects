@@ -1,7 +1,9 @@
-package com.emp.model;
+package com.emp.model.employee;
+
+import com.emp.model.common.Person;
 
 public class Employee extends Person {
-
+	 private final String WHO = "employee";
 	 private int id;
 	 private String email;
 	 private String mobNo;
@@ -61,6 +63,11 @@ public class Employee extends Person {
 	public void setPassword(String password ) {
 		this.password = password;
 	}
+	
+	public String getWHO() {
+		return WHO;
+	}
+	
 	@Override
 	public String toString() {
 		return "Employee ["+super.toString()+"id=" + id + ", email=" + email + ", mobNo=" + mobNo + ", password=" + password + ", joinDate=" + joinDate +"]";
