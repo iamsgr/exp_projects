@@ -1,7 +1,7 @@
 package com.emp.model.common;
 
 public class Person {
-
+    private final String WHO = "person";
 	private String name;
 	private String gender;
 	private String dob;
@@ -49,6 +49,10 @@ public class Person {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public String getWHO() {
+		return WHO;
 	}
 
 	@Override

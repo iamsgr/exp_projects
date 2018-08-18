@@ -109,11 +109,12 @@ public class ManipulateEmployee {
 		return true;
 	}
 
-	public static boolean getCredentials(String userName, String userPass) {
+	public static int getCredentials(String userName, String userPass) {
 		Connection con = DbUtil.getConnection();
 		String pass = null;
+		int id = 0;
 		try {
-			PreparedStatement ps = con.prepareStatement("select empPassword from EmpDetails where empEmail=?");
+			PreparedStatement ps = con.prepareStatement("select empPassword, empID from EmpDetails where empEmail=?");
 			ps.setString(1, userName);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
@@ -124,10 +125,10 @@ public class ManipulateEmployee {
 		}
 
 		if (pass == null)
-			return false;
+			return id;
 		if (pass.equals(userPass))
-			return true;
+			return id;
 		else
-			return false;
+			return id;
 	}
 }

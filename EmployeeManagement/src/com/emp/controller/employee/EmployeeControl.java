@@ -29,12 +29,6 @@ public class EmployeeControl extends HttpServlet {
 		try {
 			switch (action) {
 			
-			case "/emp/login":
-				EmployeeService.loginEmp(request, response);
-				break;
-			case "/emp/logout":
-				EmployeeService.logoutEmp(request, response);
-				break;
 			default:
 				response.sendRedirect("login.jsp");
 				break;

@@ -2,7 +2,6 @@ package com.emp.controller.common;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +27,12 @@ public class CommonControl extends HttpServlet {
 		try {
 			switch (action) {
 			
+			case "/login":
+				CommonService.login(request, response);
+				break;
+			case "/logout":
+				CommonService.logout(request, response);
+				break;
 			case "/registration":
 				CommonService.showRegistrationForm(request, response);
 				break;
@@ -52,7 +57,7 @@ public class CommonControl extends HttpServlet {
 					request.getRequestDispatcher("/emp").forward(request, response);
 
 				}else
-					response.sendRedirect("registration.jsp");
+					response.sendRedirect(request.getContextPath()+"/adminLogin.jsp");
 				break;
 			}
 		} catch (Exception ex) {

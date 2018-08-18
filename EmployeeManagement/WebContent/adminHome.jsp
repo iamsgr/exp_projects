@@ -1,3 +1,4 @@
+<%@page import="com.emp.model.admin.Admin"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -46,31 +47,28 @@
 		//response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
 		//response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
 		//response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
-			if (session.getAttribute("admin_name") == null ) {
+		Object user = session.getAttribute("user"); 
+			if ( user == null & !(user instanceof Admin)) {
 				System.out.println("in if of jsp");
-				response.sendRedirect("adminLogin.jsp");
+				request.getRequestDispatcher("/index").forward(request, response);
 			}else{
 				System.out.println("in else of jsp");
-				String name = session.getAttribute("admin_name").toString();
+				Admin admin = (Admin)session.getAttribute("user");
 	
      %>
 	<div align="Center">
 		<table style="width:-webkit-fill-available">
 			<tr>
 				<td><div>
-						<form action="adminHome" style="float:left">
-						  <input type="submit" value="Home" style="float:left" />
-						</form>
+                      <a href="/EmployeeManagement/admin/adminHome" style="float:left">Home</a>
 					</div>
 			    </td>
 
 				<td><div>
-						<span style="float:right"><i style="color: green ; float:right">Welcome <%=name%>...
+						<span style="float:right"><i style="color: green ; float:right">Welcome <%=admin.getName()%>
 						</i></span> <br> 
 						<span style="float:right">
-							<form action="adminLogout" style="float:right">
-								<input type="submit" value="Logout" />
-							</form>
+							<a href="/EmployeeManagement/logout" style="float:right">logout</a>
 						</span>
 					</div>
 				</td>

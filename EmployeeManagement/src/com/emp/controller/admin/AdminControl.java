@@ -27,39 +27,39 @@ public class AdminControl extends HttpServlet {
 	
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
-    	String action = (String) request.getAttribute("action");
-    	System.out.println("AdminControl:action:"+ action);
-    	try {
-    		switch (action) {
-    		
-    		case "/admin/adminLogin":
-    			AdminService.loginAdmin(request, response);
-    			break;
-    		case "/admin/adminHome":
-    			if(request.getSession(false).getAttribute("admin_name") == null)
-    				request.getRequestDispatcher("login.jsp").include(request, response);
-    			else
-    				AdminService.listEmp(request, response);
-    			break;
-    		case "/admin/adminLogout":
-    			AdminService.logoutAdmin(request, response);
-    			break;
-    		case "/admin/add":
-    			CommonService.insertEmp(request, response);
-    			break;
-    		case "/admin/show":
-    			AdminService.listEmp(request, response);
-    			break;
-    		case "/admin/sort":
-    			AdminService.sortEmp(request, response);
-    			break;
-    		default:
-    			response.sendRedirect("adminLogin.jsp");
-    			break;
-    		}
-    	 } catch (Exception ex) {
-    		ex.printStackTrace();
-    		throw new ServletException(ex);
+    	String action= null;
+    	action = (String) request.getAttribute("action");
+    	//action = request.getServletPath();
+    	if(action != null) {
+        	System.out.println("AdminControl:action:"+ action);
+        	try {
+        		switch (action) {
+        		case "/admin/adminHome":
+        			if(request.getSession(false).getAttribute("user") == null)
+        				request.getRequestDispatcher("/login.jsp").include(request, response);
+        			else
+        				AdminService.listEmp(request, response);
+        			break;
+        		case "/admin/add":
+        			CommonService.insertEmp(request, response);
+        			break;
+        		case "/admin/show":
+        			AdminService.listEmp(request, response);
+        			break;
+        		case "/admin/sort":
+        			AdminService.sortEmp(request, response);
+        			break;
+        		default:
+        			response.sendRedirect(request.getContextPath()+"/adminHome.jsp");
+        			break;
+        		}
+        	 } catch (Exception ex) {
+        		ex.printStackTrace();
+        		throw new ServletException(ex);
+        	}
+         }else {
+        	 response.sendRedirect(request.getContextPath()+"/adminLogin.jsp");
+         }
     	}
-     }
+
 }

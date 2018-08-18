@@ -22,7 +22,7 @@ public class MobileComparator implements Comparator<Employee> {
 	
 	@Override
 	public int compare(Employee o1, Employee o2) {
-		return o1.getMobNo().compareToIgnoreCase(o2.getMobNo())==0? 0: o1.getMobNo().compareToIgnoreCase(o2.getMobNo())<0? -1:1;
+		return o1.getMobNo().compareTo(o2.getMobNo())==0? 0: o1.getMobNo().compareTo(o2.getMobNo())<0? -1:1;
 	}
 
 }

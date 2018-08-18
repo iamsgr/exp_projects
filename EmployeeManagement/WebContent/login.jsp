@@ -19,7 +19,7 @@
 	<br>
 	<div align="center">
 	<samp align="center" style="color:blue"><i> Welcome to Employee Login Panel</i></samp>
-		<form action="emp/login" method="post">
+		<form action="login" method="post">
 			<table>
 				<tr>
 					<td>Email Id:</td>

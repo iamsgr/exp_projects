@@ -19,7 +19,7 @@
 	<br>
 	<div align="center">
 	    <samp align="center" style="color:blue"><i> Welcome to the Admin Login Panel</i></samp>
-		<form action="admin/adminLogin" method="post">
+		<form action="login" method="post">
 			<table>
 				<tr>
 					<td>Admin Name:</td>
