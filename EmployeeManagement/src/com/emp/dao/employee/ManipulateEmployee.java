@@ -119,6 +119,7 @@ public class ManipulateEmployee {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				pass = rs.getString("empPassword");
+				id = rs.getInt("empID");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

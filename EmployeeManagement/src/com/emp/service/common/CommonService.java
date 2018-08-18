@@ -46,17 +46,22 @@ public class CommonService {
 			}
 		} else {
 			if (emp_uname != null | emp_pass != null) {
+				System.out.println("In Emp Login");
+				System.out.println("Details of Emp=> Email: "+emp_uname+"Password:"+emp_pass);
 				if (emp_uname.equals("") || emp_pass.equals("")) {
 					request.getRequestDispatcher("/error_pages/bothfields.jsp").include(request, response);
 					request.getRequestDispatcher("/login.jsp").include(request, response);
 				} else {
 					int id = ManipulateEmployee.getCredentials(emp_uname.trim(), emp_pass.trim());
+					System.out.println("Emp id who going to login:"+id);
 					if (id > 0) {
+						System.out.println("Emp login success");
 						Employee emp = ManipulateEmployee.getSingleEmployee(id);
 						HttpSession session = request.getSession(true);
 						session.setAttribute("user", emp);
 						request.getRequestDispatcher("/home.jsp").forward(request, response);
 					} else {
+						System.out.println("Emp login Failed");
 						request.getRequestDispatcher("/error_pages/error.jsp").include(request, response);
 						request.getRequestDispatcher("/login.jsp").include(request, response);
 					}
