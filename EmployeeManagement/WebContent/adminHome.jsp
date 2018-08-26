@@ -45,14 +45,14 @@
 		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 		//response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
 		//response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
-		//response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
-		//response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 		Object user = session.getAttribute("user"); 
-			if ( user == null & !(user instanceof Admin)) {
-				System.out.println("in if of jsp");
-				request.getRequestDispatcher("/index").forward(request, response);
+			if ( user == null | !(user instanceof Admin)) {
+				System.out.println("Admin: in if of jsp");
+				request.getRequestDispatcher("/adminLogin.jsp").forward(request, response);
 			}else{
-				System.out.println("in else of jsp");
+				System.out.println("Admin: in else of jsp");
 				Admin admin = (Admin)session.getAttribute("user");
 	
      %>

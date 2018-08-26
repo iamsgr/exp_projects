@@ -1,3 +1,4 @@
+<%@page import="com.emp.service.admin.AdminService"%>
 <%@page import="com.emp.model.employee.Employee"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -11,14 +12,21 @@
 <body>
 	<%
 	    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
-	    Object user = session.getAttribute("user"); 
-		if ( user == null & !(user instanceof Employee) ){
-			response.sendRedirect("login.jsp");
-		}
-		Employee emp = (Employee) session.getAttribute("user");
+   		String path = request.getServletPath();
+    	System.out.println("Path:"+path);
+		Object user = session.getAttribute("user"); 
+		if ( user == null ) {
+			System.out.println("in if of jsp");
+			request.getRequestDispatcher("/login.jsp").forward(request, response);
+		}else if( !(user instanceof Employee) ){
+				AdminService.listEmp(request, response);
+			  }else{
+				System.out.println("in else of jsp");
+				Employee emp = (Employee)session.getAttribute("user");
+
 	%>
 	<div align="Center">
-		<i style="color: green"><%=emp.getName()%> You are successfully logged
+		<i style="color: green"><%= emp.getName()%> You are successfully logged
 			in...</i><br> <br>
 		<form action="list">
 			<input type="submit" value="Show Records" />
@@ -44,4 +52,5 @@
 		</form>
 	</div>
 </body>
+<% } %>
 </html>

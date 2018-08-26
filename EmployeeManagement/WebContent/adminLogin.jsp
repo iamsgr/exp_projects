@@ -12,9 +12,10 @@
 	<br>
 	<br>
 	<div align="center">
-		<a href="adminLogin.jsp">Admin</a> <span><label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label></span><span><a
-			href="registration.jsp">Registration</a></span><span><label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label></span><a
-			href="login.jsp">Login</a><span></span>
+		<a href="/EmployeeManagement/adminLogin.jsp">Admin</a> <span><label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label></span><span><a
+			href="/EmployeeManagement/registration.jsp">Registration</a></span><span><label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label></span><a
+			href="/EmployeeManagement/login.jsp">Login</a><span></span>
+	</div>
 	</div>
 	<br>
 	<div align="center">

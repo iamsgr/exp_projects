@@ -6,6 +6,7 @@ import java.util.Properties;
 public class DbUtil {
 	private static volatile Connection con;
 	
+	private DbUtil() { }
 	//static block
 	static {
 		Properties prop = new Properties();
