@@ -9,6 +9,8 @@ public class EmailComparator implements Comparator<Employee> {
 	
 	private static volatile EmailComparator cmptr= null;
 
+	private EmailComparator() {}
+	
 	static {
 		synchronized(EmailComparator.class) {
 			if(cmptr==null) {

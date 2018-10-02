@@ -8,6 +8,7 @@ public class MobileComparator implements Comparator<Employee> {
 	
 	private static volatile MobileComparator cmptr= null;
 
+	private MobileComparator() {}
 	static {
 		synchronized(MobileComparator.class) {
 			if(cmptr==null) {

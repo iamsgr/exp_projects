@@ -8,6 +8,8 @@ public class GenderComparator implements Comparator<Employee> {
 	
 	private static volatile GenderComparator cmptr= null;
 
+	private GenderComparator(){ }
+	
 	static {
 		synchronized(GenderComparator.class) {
 			if(cmptr==null) {

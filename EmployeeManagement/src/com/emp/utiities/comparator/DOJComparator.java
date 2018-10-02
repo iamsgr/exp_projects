@@ -9,6 +9,8 @@ public class DOJComparator implements Comparator<Employee> {
 	
 	private static volatile DOJComparator cmptr= null;
 
+	private DOJComparator(){}
+	
 	static {
 		synchronized(DOJComparator.class) {
 			if(cmptr==null) {

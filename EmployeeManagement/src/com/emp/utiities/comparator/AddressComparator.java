@@ -7,6 +7,8 @@ import com.emp.model.employee.Employee;
 public class AddressComparator implements Comparator<Employee> {
 
 	private static volatile AddressComparator cmptr= null;
+	
+	private AddressComparator() {}
 
 	static {
 		synchronized(AddressComparator.class) {

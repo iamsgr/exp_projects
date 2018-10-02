@@ -8,6 +8,7 @@ public class NameComparator implements Comparator<Employee> {
 
 	private static volatile NameComparator cmptr = null;
 
+	private NameComparator(){ }
 	static {
 		synchronized (NameComparator.class) {
 			if (cmptr == null) {

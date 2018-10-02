@@ -8,6 +8,8 @@ public class IDComparator implements Comparator<Employee> {
 
 	private static volatile IDComparator cmptr= null;
 
+	private IDComparator() {}
+	
 	static {
 		synchronized(IDComparator.class) {
 			if(cmptr==null) {

@@ -9,6 +9,8 @@ public class DOBComparator implements Comparator<Employee> {
 	
 	private static volatile DOBComparator cmptr= null;
 
+	private DOBComparator() {}
+
 	static {
 		synchronized(DOBComparator.class) {
 			if(cmptr==null) {
